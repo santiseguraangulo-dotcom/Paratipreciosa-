@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi reina hermosa ❤️</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: #0b0207;
+            background-image: radial-gradient(circle, #24051a 0%, #0b0207 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+            overflow-x: hidden;
+        }
+        .card {
+            background: rgba(18, 4, 13, 0.95);
+            border: 2px solid #ff2a85;
+            border-radius: 25px;
+            padding: 22px;
+            max-width: 380px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255, 42, 133, 0.4);
+            position: relative;
+            z-index: 2;
+        }
+        h1 { color: #ff3399; font-size: 1.2rem; margin-bottom: 5px; }
+        .subtitle { font-size: 0.8rem; color: #ff99cc; margin-bottom: 12px; }
+        
+        .photo-container {
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid #ff2a85;
+            margin-bottom: 12px;
+        }
+        .photo-container img { width: 100%; height: auto; display: block; }
+
+        .love-quote {
+            font-style: italic;
+            font-size: 0.88rem;
+            color: #ffb3d1;
+            margin-bottom: 12px;
+            background: rgba(255, 42, 133, 0.1);
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 42, 133, 0.25);
+            line-height: 1.4;
+            min-height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .phrases-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        .btn-phrase {
+            background: rgba(255, 42, 133, 0.15);
+            border: 1px solid #ff2a85;
+            color: #ff99cc;
+            padding: 10px 5px;
+            font-size: 0.75rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+        .btn-phrase:active, .btn-phrase:hover {
+            background: #ff2a85;
+            color: white;
+            transform: scale(0.97);
+        }
+
+        .music-box {
+            background: rgba(255, 42, 133, 0.08);
+            border: 1px solid rgba(255, 42, 133, 0.3);
+            border-radius: 15px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .music-box p { font-size: 0.8rem; color: #ff99cc; margin-bottom: 6px; }
+        audio {
+            width: 100%;
+            height: 35px;
+            accent-color: #ff2a85;
+        }
+
+        .proposal-box {
+            background: rgba(40, 8, 26, 0.9);
+            border: 2px dashed #ff3399;
+            border-radius: 18px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .proposal-box h2 { color: #ff66b2; font-size: 1.05rem; margin-bottom: 12px; }
+        .btn-group { display: flex; justify-content: center; }
+        .btn-yes {
+            background: #ff2a85;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.05rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 42, 133, 0.4);
+            transition: transform 0.2s;
+        }
+        .btn-yes:active { transform: scale(0.95); }
+        #answer-message {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #ff3399;
+            display: none;
+            line-height: 1.4;
+        }
+
+        .heart {
+            position: fixed;
+            color: #ff2a85;
+            font-size: 24px;
+            user-select: none;
+            pointer-events: none;
+            z-index: 9999;
+            animation: flotarCorazon 3s linear forwards;
+        }
+        @keyframes flotarCorazon {
+            0% { transform: translateY(0) scale(0.6); opacity: 1; }
+            100% { transform: translateY(-450px) scale(1.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>¡FELIZ CUMPLEAÑOS & 5 MESES!</h1>
+        <div class="subtitle">Hecho especialmente para ti ❤️</div>
+
+        <div class="photo-container">
+            <img src="https://i.postimg.cc/XNyJ1Z2Z/IMG-20260928-WA0014.jpg" alt="Nuestra foto">
+        </div>
+
+        <div class="love-quote" id="text-box">
+            "Así te quería pedir que seas mi novia" ❤️
+        </div>
+
+        <div class="phrases-grid">
+            <button class="btn-phrase" onclick="cambiarFrase('Nuestros 5 Meses & Cumple')">Nuestros 5 Meses & Cumple</button>
+            <button class="btn-phrase" onclick="cambiarFrase('Te Amo')">Te Amo</button>
+            <button class="btn-phrase" onclick="cambiarFrase('Mi Niña Hermosa')">Mi Niña Hermosa</button>
+            <button class="btn-phrase" onclick="cambiarFrase('Siempre Juntos')">Siempre Juntos</button>
+        </div>
+
+        <div class="music-box">
+            <p>🎵 Para ti, mi amor:</p>
+            <audio controls src="cancion.mp3"></audio>
+        </div>
+
+        <div class="proposal-box">
+            <h2>¿Me amas tanto como yo a ti?</h2>
+            <div class="btn-group">
+                <button class="btn-yes" onclick="lanzarCorazones()">¡SÍ, MUCHO! 💖</button>
+            </div>
+            <div id="answer-message">¡Yo sabía, mi amor! Te amo con el alma entera. 🥰🎁</div>
+        </div>
+    </div>
+
+    <script>
+        function cambiarFrase(tipo) {
+            const textBox = document.getElementById('text-box');
+            if (tipo === 'Nuestros 5 Meses & Cumple') {
+                textBox.innerHTML = '"Mi amor, esto lo hice pensando en ti para celebrar tu cumpleaños y nuestros 5 meses juntos. Eres lo más bonito que tengo en la vida." ❤️';
+            } else if (tipo === 'Te Amo') {
+                textBox.innerHTML = '"Te amo con todas mis fuerzas, eres mi razón de ser y cada día a tu lado es el mejor de todos." 💖';
+            } else if (tipo === 'Mi Niña Hermosa') {
+                textBox.innerHTML = '"Mi niña hermosa, gracias por aparecer en mi vida y llenarla de tanta luz y felicidad." ✨';
+            } else if (tipo === 'Siempre Juntos') {
+                textBox.innerHTML = '"Quiero que caminemos de la mano por mucho tiempo más, superando todo juntos. Siempre tuyo." 🌹';
+            }
+        }
+
+        function lanzarCorazones() {
+            // Muestra el mensaje romántico en texto dentro de la tarjeta
+            document.getElementById('answer-message').style.display = 'block';
+
+            // Dispara una lluvia masiva de muchos corazones
+            for (let i = 0; i < 70; i++) {
+                setTimeout(() => { crearCorazon(); }, i * 35);
+            }
+        }
+
+        function crearCorazon() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.bottom = '20px';
+            const size = Math.random() * 25 + 15;
+            heart.style.fontSize = size + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 3000);
+        }
+    </script>
+</body>
+  </html>
+  
