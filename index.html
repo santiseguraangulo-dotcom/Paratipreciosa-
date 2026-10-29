@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi reina</title>
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #ff3366;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        h1 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: #ff4d88;
+        }
+        .subtitle {
+            font-size: 1rem;
+            color: #ff99bb;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: #1a000d;
+            border: 2px solid #ff3366;
+            border-radius: 20px;
+            padding: 15px;
+            width: 100%;
+            max-width: 380px;
+            box-shadow: 0 0 20px rgba(255, 51, 102, 0.4);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            border-radius: 15px;
+            border: 2px solid #ff4d88;
+            object-fit: cover;
+            max-height: 380px;
+        }
+        .message {
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #ffccd9;
+            padding: 10px;
+        }
+        .audio-section {
+            margin-top: 10px;
+        }
+        .audio-label {
+            font-size: 0.9rem;
+            color: #ff99bb;
+            margin-bottom: 8px;
+        }
+        audio {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .question-card {
+            background: #1a000d;
+            border: 2px dashed #ff3366;
+            border-radius: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .question-card h3 {
+            font-size: 1.2rem;
+            color: #ff4d88;
+            margin-bottom: 15px;
+        }
+        .btn {
+            background: linear-gradient(45deg, #ff3366, #ff6699);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 51, 102, 0.6);
+            transition: transform 0.2s;
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>¡Feliz Cumpleaños & 5 Meses!</h1>
+    <div class="subtitle">Para mi reina ❤️</div>
+
+    <div class="card">
+        <!-- AQUÍ VA TU FOTO -->
+        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=600&auto=format&fit=crop" alt="Nuestra foto">
+    </div>
+
+    <div class="card">
+        <div class="message">
+            "Mi amor, esto lo hice pensando en ti para celebrar tu cumpleaños y nuestros 5 meses juntos. Eres lo más bonito que tengo en la vida. Te amo con todo mi corazón." ❤️
+        </div>
+    </div>
+
+    <div class="card audio-section">
+        <div class="audio-label">🎵 Para ti, mi amor:</div>
+        <!-- AQUÍ SE REPRODUCE TU CANCIÓN -->
+        <audio controls>
+            <source src="cancion.mp3" type="audio/mpeg">
+            Tu navegador no soporta el reproductor de audio.
+        </audio>
+    </div>
+
+    <div class="question-card">
+        <h3>¿Me amas tanto como yo a ti?</h3>
+        <button class="btn" onclick="alert('¡Sabía que sí! Te amo muchísimo mi amor ❤️✨')">¡SÍ, MUCHO! ✨</button>
+    </div>
+
+</body>
+</html>
+  
