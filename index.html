@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Reina 👑❤️</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fondo de corazones flotantes -->
+    <div class="contenedor-corazones" id="corazones"></div>
+
+    <div class="tarjeta-principal">
+        
+        <!-- HEADER -->
+        <header class="header-amor">
+            <span class="corona">👑</span>
+            <h1>Para Mi Reina</h1>
+            <p class="subtitulo">Dueña absoluta de mi corazón y de mi vida entera 🔥❤️</p>
+        </header>
+
+        <!-- GRID PRINCIPAL (BENTO GRID) -->
+        <div class="bento-grid">
+            
+            <!-- TARJETA FOTO Y MÚSICA -->
+            <div class="tarjeta-bento col-2 centro">
+                <div class="contenedor-foto">
+                    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=500&auto=format&fit=crop" alt="Nosotros" class="foto-pareja">
+                </div>
+                <button class="btn-musica" onclick="toggleMusica()">🎵 Reproducir Nuestra Canción</button>
+                <!-- Aquí conectamos directo tu archivo cancion.mp3 -->
+                <audio id="audioAmor" loop>
+                    <source src="cancion.mp3" type="audio/mp3">
+                </audio>
+            </div>
+
+            <!-- CONTADOR DE TIEMPO -->
+            <div class="tarjeta-bento col-2">
+                <p class="titulo-etiqueta">NUESTRO AMOR ETERNO COMENZÓ HACE:</p>
+                <div id="reloj" class="reloj">Calculando latidos...</div>
+            </div>
+
+            <!-- TARJETA CARTA SECRETA (COLUMNA 1) -->
+            <div class="tarjeta-bento sobre-bento" onclick="abrirCarta()">
+                <div class="icono-bento">💌</div>
+                <p class="titulo-bento">Nuestra Cartita</p>
+                <span class="sub-bento">Toca para abrir</span>
+            </div>
+
+            <!-- TARJETA RAZONES (COLUMNA 2) -->
+            <div class="tarjeta-bento razon-bento" onclick="mostrarRazon()">
+                <div class="icono-bento">✨</div>
+                <p class="titulo-bento">¿Por qué te amo?</p>
+                <span class="sub-bento" id="texto-razon">Toca para descubrir</span>
+            </div>
+
+            <!-- PREGUNTA TRAVIESA (2 COLUMNAS) -->
+            <div class="tarjeta-bento col-2 seccion-pregunta">
+                <p class="pregunta-amor">¿Me amas con la misma locura con la que yo te amo a ti?</p>
+                <div class="botones-amor">
+                    <button class="btn-si" onclick="dijoSi()">¡Te amo con el alma! 💖</button>
+                    <button class="btn-no" id="btnNo" onmouseover="moverNo()" ontouchstart="moverNo()">No 🙈</button>
+                </div>
+                <p id="respuesta-amor" class="mensaje-oculto"></p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CARTA MODAL (POPUP) -->
+    <div class="modal-overlay oculto" id="modalCarta">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" onclick="cerrarCarta()">&times;</span>
+            <p class="titulo-modal">Mi Reina Hermosa ❤️</p>
+            <p>No hay palabras suficientes en este mundo para describirte lo mucho que te amo. Eres mi pensamiento al despertar, mi fuerza en cada paso y mi refugio seguro.</p>
+            <p>Junto a ti descubrí lo que es amar con el alma entera. Prometo cuidarte, respetarte y hacerte la mujer más feliz cada segundo de mi vida.</p>
+            <p class="firma">Tuyo por siempre y para siempre ❤️</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+      </html>
+      
