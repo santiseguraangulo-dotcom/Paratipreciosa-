@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #18030b 0%, #3d0a27 50%, #630528 100%);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+.tarjeta-principal {
+    background: rgba(22, 6, 14, 0.94);
+    backdrop-filter: blur(20px);
+    border-radius: 28px;
+    padding: 22px 14px;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    border: 2px solid rgba(255, 105, 180, 0.35);
+}
+
+/* HEADER */
+.corona {
+    font-size: 2.3rem;
+    display: block;
+    margin-bottom: -4px;
+    animation: flotar 3s ease-in-out infinite;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #ff477e;
+    line-height: 1;
+    text-shadow: 0 0 12px rgba(255, 71, 126, 0.6);
+}
+
+.subtitulo {
+    font-size: 0.75rem;
+    color: #ffb3c6;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    font-weight: 300;
+}
+
+/* BENTO GRID */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.tarjeta-bento {
+    background: rgba(255, 20, 147, 0.12);
+    border: 1px solid rgba(255, 105, 180, 0.25);
+    border-radius: 16px;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.tarjeta-bento:active {
+    transform: scale(0.97);
+}
+
+.col-2 {
+    grid-column: span 2;
+}
+
+.centro {
+    align-items: center;
+}
+
+/* FOTO Y MÚSICA */
+.contenedor-foto {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ff477e;
+    box-shadow: 0 0 15px rgba(255, 71, 126, 0.7);
+    margin-bottom: 10px;
+}
+
+.foto-pareja {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-musica {
+    background: rgba(255, 71, 126, 0.2);
+    color: #ff85a1;
+    border: 1px dashed #ff477e;
+    padding: 7px 12px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+}
+
+/* CONTADOR DE AMOR */
+.titulo-etiqueta {
+    font-size: 0.65rem;
+    color: #ff85a1;
+    font-weight: 700;
+    margin-bottom: 3px;
+    letter-spacing: 0.5px;
+}
+
+.reloj {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255, 105, 180, 0.8);
+}
+
+/* TARJETAS INTERACTIVAS */
+.icono-bento {
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+}
+
+.titulo-bento {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ff85a1;
+}
+
+.sub-bento {
+    font-size: 0.68rem;
+    color: #e0e0e0;
+    margin-top: 2px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* PREGUNTA TRAVIESA */
+.seccion-pregunta {
+    background: rgba(255, 20, 147, 0.08);
+    padding: 12px 8px;
+}
+
+.pregunta-amor {
+    font-weight: 600;
+    color: #ffb3c6;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.botones-amor {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    width: 100%;
+    min-height: 38px;
+}
+
+.btn-si {
+    background: linear-gradient(45deg, #ff0055, #ff477e);
+    color: white;
+    border: none;
+    padding: 7px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(255, 0, 85, 0.6);
+    cursor: pointer;
+    z-index: 5;
+}
+
+.btn-no {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ddd;
+    border: none;
+    padding: 7px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    position: absolute;
+    transition: all 0.2s ease;
+}
+
+.mensaje-oculto {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #ff70a6;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    animation: aparecer 0.4s ease-out;
+}
+
+/* CARTA MODAL (POPUP) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    padding: 20px;
+}
+
+.modal-contenido {
+    background: rgba(35, 8, 20, 0.98);
+    border: 2px solid #ff477e;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 340px;
+    width: 100%;
+    position: relative;
+    text-align: left;
+    font-size: 0.83rem;
+    line-height: 1.6;
+    color: #fce4ec;
+    box-shadow: 0 10px 30px rgba(255, 71, 126, 0.4);
+    animation: aparecer 0.3s ease-out;
+}
+
+.titulo-modal {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: #ff477e;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: #ff85a1;
+    cursor: pointer;
+}
+
+.firma {
+    text-align: right;
+    font-weight: 600;
+    color: #ff70a6;
+    margin-top: 10px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.4rem;
+}
+
+.oculto {
+    display: none;
+}
+
+/* CORAZONES FLOTANTES */
+.contenedor-corazones {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.corazon-flotante {
+    position: absolute;
+    bottom: -20px;
+    color: #ff477e;
+    opacity: 0.8;
+    animation: subir 6s linear infinite;
+    text-shadow: 0 0 10px #ff0055;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes subir {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
+    100% { transform: translateY(-105vh) rotate(360deg); opacity: 0; }
+}
