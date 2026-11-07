@@ -28,7 +28,7 @@ body {
     position: relative;
     z-index: 10;
     border: 2px solid rgba(255, 105, 180, 0.35);
-    overflow: hidden; /* Mantiene la lluvia de brillos atrapada dentro de la tarjeta */
+    overflow: hidden;
 }
 
 /* HEADER */
@@ -300,7 +300,7 @@ h1 {
 .brillo-particula {
     position: absolute;
     top: -20px;
-    color: #ffdf00; /* Tono dorado/brillante romántico */
+    color: #ffdf00;
     opacity: 0.8;
     animation: caerBrillo linear infinite;
     text-shadow: 0 0 8px #ff477e, 0 0 15px #ffff00;
