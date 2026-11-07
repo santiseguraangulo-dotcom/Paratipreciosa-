@@ -157,17 +157,18 @@ h1 {
     line-height: 1.2;
 }
 
-/* SECCIÓN PREGUNTA FINAL */
+/* SECCIÓN PREGUNTA FINAL (EFECTO BOFF) */
 .seccion-pregunta {
-    background: rgba(255, 20, 147, 0.08);
+    background: rgba(255, 20, 147, 0.1);
     padding: 14px 10px;
+    border: 1px solid rgba(255, 71, 126, 0.4);
 }
 
 .pregunta-amor {
     font-weight: 600;
     color: #ffb3c6;
-    font-size: 0.8rem;
-    margin-bottom: 4px;
+    font-size: 0.82rem;
+    margin-bottom: 6px;
 }
 
 .botones-amor {
@@ -177,7 +178,7 @@ h1 {
     position: relative;
     width: 100%;
     min-height: 38px;
-    margin-top: 6px;
+    margin-top: 4px;
 }
 
 .btn-si {
@@ -185,12 +186,13 @@ h1 {
     color: white;
     border: none;
     padding: 8px 16px;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 700;
     border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(255, 0, 85, 0.7);
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.9);
     cursor: pointer;
     z-index: 5;
+    animation: latidoBtn 1.5s infinite;
 }
 
 .btn-no {
@@ -213,29 +215,11 @@ h1 {
     font-size: 0.85rem;
     line-height: 1.4;
     background: rgba(255, 71, 126, 0.15);
-    padding: 8px;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 12px;
     border: 1px solid rgba(255, 71, 126, 0.4);
     animation: aparecer 0.4s ease-out;
     text-shadow: 0 0 8px rgba(255, 71, 126, 0.6);
-}
-
-.btn-whatsapp {
-    display: inline-block;
-    margin-top: 8px;
-    background: #25d366;
-    color: white;
-    padding: 6px 12px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    border-radius: 20px;
-    text-decoration: none;
-    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.5);
-    transition: transform 0.2s;
-}
-
-.btn-whatsapp:active {
-    transform: scale(0.95);
 }
 
 /* CARTA MODAL (POPUP) */
@@ -300,7 +284,7 @@ h1 {
     display: none;
 }
 
-/* CORAZONES FLOTANTES */
+/* EFECTO BOFF: CORAZONES EXPLOSIVOS GIGANTES */
 .contenedor-corazones {
     position: fixed;
     top: 0;
@@ -313,11 +297,11 @@ h1 {
 
 .corazon-flotante {
     position: absolute;
-    bottom: -20px;
+    bottom: -30px;
     color: #ff477e;
-    opacity: 0.8;
-    animation: subir 6s linear infinite;
-    text-shadow: 0 0 10px #ff0055;
+    opacity: 0.9;
+    animation: subirBoing 5s linear infinite;
+    text-shadow: 0 0 15px #ff0055, 0 0 25px #ff477e;
 }
 
 @keyframes flotar {
@@ -330,7 +314,13 @@ h1 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes subir {
-    0% { transform: translateY(0) rotate(0deg); opacity: 0.9; }
-    100% { transform: translateY(-105vh) rotate(360deg); opacity: 0; }
+@keyframes latidoBtn {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(255, 0, 85, 1); }
+}
+
+@keyframes subirBoing {
+    0% { transform: translateY(0) scale(0.6) rotate(0deg); opacity: 1; }
+    50% { transform: translateY(-50vh) scale(1.3) rotate(180deg); opacity: 0.9; }
+    100% { transform: translateY(-105vh) scale(1) rotate(360deg); opacity: 0; }
 }
