@@ -98,7 +98,7 @@ function mostrarMensajeFinal() {
     lanzarLluviaBrillos();
 }
 
-// --- CREAR PARTÍCULAS DE BRILLO (DE ARRIBA HACIA ABAJO DENTRO DE LA TARJETA) ---
+// --- CREAR PARTÍCULAS DE BRILLO ---
 function crearBrillo() {
     const contenedor = document.getElementById('brillos');
     if (!contenedor) return;
@@ -127,5 +127,4 @@ function lanzarLluviaBrillos() {
     }
 }
 
-// Generar brillos sutiles continuamente dentro de la tarjeta
 setInterval(crearBrillo, 500);
