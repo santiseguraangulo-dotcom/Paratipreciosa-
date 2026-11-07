@@ -91,7 +91,7 @@ function moverNo(idBtn) {
     btnNo.style.transform = `translate(${x}px, ${y}px)`;
 }
 
-// --- ACCIÓN BOTÓN FINAL (CORREGIDA) ---
+// --- ACCIÓN BOTÓN FINAL ---
 function mostrarMensajeFinal() {
     const contenedor = document.getElementById('respuesta-amor-container');
     contenedor.classList.remove('oculto');
