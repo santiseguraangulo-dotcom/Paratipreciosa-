@@ -50,7 +50,7 @@ function abrirCarta() {
 }
 
 function cerrarCarta() {
-    document.getElementById('modalCarta'].classList.add('oculto');
+    document.getElementById('modalCarta').classList.add('oculto');
 }
 
 // --- FOTO INTERACTIVA GRANDE ---
@@ -91,7 +91,7 @@ function moverNo(idBtn) {
     btnNo.style.transform = `translate(${x}px, ${y}px)`;
 }
 
-// --- ACCIÓN BOTÓN FINAL ---
+// --- ACCIÓN BOTÓN FINAL (CORREGIDA) ---
 function mostrarMensajeFinal() {
     const contenedor = document.getElementById('respuesta-amor-container');
     contenedor.classList.remove('oculto');
