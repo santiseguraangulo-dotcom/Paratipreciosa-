@@ -285,7 +285,7 @@ h1 {
     display: none;
 }
 
-/* LLUVIA DE BRILLOS INTERNA (DE ARRIBA HACIA ABAJO) */
+/* LLUVIA DE BRILLOS INTERNA */
 .contenedor-brillos {
     position: absolute;
     top: 0;
