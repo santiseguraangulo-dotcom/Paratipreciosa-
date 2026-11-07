@@ -9,10 +9,10 @@
 </head>
 <body>
 
-    <!-- Fondo de corazones flotantes -->
-    <div class="contenedor-corazones" id="corazones"></div>
-
     <div class="tarjeta-principal">
+        
+        <!-- LLUVIA DE BRILLOS DENTRO DE LA TARJETA -->
+        <div class="contenedor-brillos" id="brillos"></div>
         
         <!-- HEADER -->
         <header class="header-amor">
@@ -37,7 +37,7 @@
                 </audio>
             </div>
 
-            <!-- CONTADOR DE TIEMPO -->
+            <!-- CONTADOR DE TIEMPO EN VIVO -->
             <div class="tarjeta-bento col-2">
                 <p class="titulo-etiqueta">NUESTRO AMOR ETERNO COMENZÓ HACE:</p>
                 <div id="reloj" class="reloj">Calculando latidos...</div>
@@ -57,16 +57,16 @@
                 <span class="sub-bento" id="texto-razon">Toca para descubrir</span>
             </div>
 
-            <!-- ÚLTIMA SECCIÓN: MEDIANOCHE SIN BOTÓN DE WHATSAPP -->
+            <!-- ÚLTIMA SECCIÓN: BOTÓN NEUTRO Y MENSAJE PARA EL ENCUENTRO -->
             <div class="tarjeta-bento col-2 seccion-pregunta">
                 <p class="pregunta-amor">¿Me amas con la misma locura con la que yo te amo a ti?</p>
                 <div class="botones-amor">
-                    <button class="btn-si" onclick="dijoSiMedianoche()">¡Te amo con el alma! 💖</button>
+                    <button class="btn-si" onclick="mostrarMensajeFinal()">💖 Toca aquí, mi reina hermosa ✨</button>
                     <button class="btn-no" id="btnNo1" onmouseover="moverNo('btnNo1')" ontouchstart="moverNo('btnNo1')">No 🙈</button>
                 </div>
                 
                 <div id="respuesta-amor-container" class="oculto">
-                    <p class="mensaje-chido">¡Feliz cumpleaños, mi reina hermosa! 🎂👑 Guarda tu respuesta y tus abrazos para dármelos en persona cuando nos veamos hoy (mañana, tarde o noche)... ¡Prepárate para la sorpresa y la comida de lo lindo! ❤️🔥</p>
+                    <p class="mensaje-chido">¡Feliz cumpleaños, mi vida! 🎂👑 Guarda tu respuesta, tus besos y tus abrazos para dármelos en persona hoy cuando nos veamos... ¡Prepárate para la sorpresa y la comida de lo lindo! ❤️🔥</p>
                 </div>
             </div>
 
