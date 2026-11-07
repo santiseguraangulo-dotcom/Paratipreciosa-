@@ -46,7 +46,7 @@ function toggleMusica() {
 // --- CARTA POPUP (MODAL) ---
 function abrirCarta() {
     document.getElementById('modalCarta').classList.remove('oculto');
-    for(let i = 0; i < 8; i++) { crearCorazon(); }
+    lanzarExplosionCorazones();
 }
 
 function cerrarCarta() {
@@ -56,7 +56,7 @@ function cerrarCarta() {
 // --- FOTO INTERACTIVA GRANDE ---
 function abrirFotoGrande() {
     document.getElementById('modalFoto').classList.remove('oculto');
-    for(let i = 0; i < 6; i++) { crearCorazon(); }
+    lanzarExplosionCorazones();
 }
 
 function cerrarFotoGrande() {
@@ -78,12 +78,8 @@ let indiceRazonActual = 0;
 
 function mostrarRazonOrden() {
     const textoRazon = document.getElementById('texto-razon');
-    
-    // Muestra la frase actual en orden
     textoRazon.textContent = razonesEnOrden[indiceRazonActual];
     crearCorazon();
-    
-    // Avanza al siguiente toque. Si llega al final, se queda en la última o vuelve a empezar (aquí se queda o repite cíclico)
     indiceRazonActual = (indiceRazonActual + 1) % razonesEnOrden.length;
 }
 
@@ -95,37 +91,38 @@ function moverNo(idBtn) {
     btnNo.style.transform = `translate(${x}px, ${y}px)`;
 }
 
-// --- RESPUESTA PREGUNTA AMOR + WHATSAPP ---
-function dijoSiAmor() {
+// --- ACCIÓN BOTÓN SÍ MEDIANOCHE (EFECTO BOFF + MENSAJE LIMPIO) ---
+function dijoSiMedianoche() {
     const contenedor = document.getElementById('respuesta-amor-container');
     contenedor.classList.remove('oculto');
-    
-    const textoWp = encodeURIComponent("¡Amor, vi tu página web y te amo con la misma locura y el alma entera! ❤️🔥👑");
-    document.getElementById('linkWpAmor').href = `https://wa.me/?text=${textoWp}`;
-
-    for(let i = 0; i < 15; i++) {
-        setTimeout(crearCorazon, i * 80);
-    }
+    lanzarExplosionCorazones();
 }
 
-// --- CORAZONES FLOTANTES ---
+// --- CREAR CORAZONES INDIVIDUALES ---
 function crearCorazon() {
     const contenedor = document.getElementById('corazones');
     const corazon = document.createElement('div');
     corazon.classList.add('corazon-flotante');
     
-    const iconos = ['❤️', '💖', '🔥', '👑', '✨', '🌹', '💋'];
+    const iconos = ['❤️', '💖', '🔥', '👑', '✨', '🌹', '💋', '💥', '🎂'];
     corazon.textContent = iconos[Math.floor(Math.random() * iconos.length)];
     
     corazon.style.left = Math.random() * 100 + 'vw';
-    corazon.style.fontSize = (Math.random() * 18 + 14) + 'px';
-    corazon.style.animationDuration = (Math.random() * 3 + 4) + 's';
+    corazon.style.fontSize = (Math.random() * 24 + 16) + 'px';
+    corazon.style.animationDuration = (Math.random() * 2 + 3) + 's';
     
     contenedor.appendChild(corazon);
 
     setTimeout(() => {
         corazon.remove();
-    }, 7000);
+    }, 5000);
 }
 
-setInterval(crearCorazon, 700);
+// --- EXPLOSIÓN MÁS POTENTE (EFECTO BOFF) ---
+function lanzarExplosionCorazones() {
+    for(let i = 0; i < 30; i++) {
+        setTimeout(crearCorazon, i * 50);
+    }
+}
+
+setInterval(crearCorazon, 600);
