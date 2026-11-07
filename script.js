@@ -30,16 +30,16 @@ function actualizarContador() {
 setInterval(actualizarContador, 1000);
 actualizarContador();
 
-// --- MÚSICA DE FONDO (SU CANCIÓN FAVORITA) ---
+// --- MÚSICA DE FONDO ---
 function toggleMusica() {
     const musica = document.getElementById('audioAmor');
     const btn = document.querySelector('.btn-musica');
     if (musica.paused) {
         musica.play();
-        btn.textContent = "⏸ Pausar Su Canción";
+        btn.textContent = "⏸ Pausar";
     } else {
         musica.pause();
-        btn.textContent = "🎵 Su Canción Favorita";
+        btn.textContent = "🎵 Reproducir";
     }
 }
 
@@ -63,7 +63,7 @@ function cerrarFotoGrande() {
     document.getElementById('modalFoto').classList.add('oculto');
 }
 
-// --- CAJITA DE RAZONES (SIN REPETIRSE DE FORMA CONSECUTIVA) ---
+// --- CAJITA DE RAZONES (SIN REPETIR LA MISMA SEGUIDA) ---
 const razones = [
     "Amo tu hermosa sonrisa que alegra mis días 😍",
     "Eres la mujer más increíble de este mundo 👑",
@@ -79,7 +79,6 @@ function mostrarRazon() {
     const textoRazon = document.getElementById('texto-razon');
     let indiceAleatorio;
     
-    // Evita que salga la misma razón dos veces seguidas
     do {
         indiceAleatorio = Math.floor(Math.random() * razones.length);
     } while (indiceAleatorio === ultimaRazonIndex);
@@ -97,12 +96,12 @@ function moverNo() {
     btnNo.style.transform = `translate(${x}px, ${y}px)`;
 }
 
-// --- RESPUESTA DEL BOTÓN SÍ ---
+// --- RESPUESTA DEL BOTÓN SÍ (BIEN CHIDA) ---
 function dijoSi() {
-    const respuesta = document.getElementById('respuesta-amor');
-    respuesta.textContent = "¡Sabía que mi reina me ama con la misma intensidad! Eres mi todo ❤️🔥👑";
-    for(let i = 0; i < 15; i++) {
-        setTimeout(crearCorazon, i * 100);
+    const contenedorRespuesta = document.getElementById('contenedor-respuesta');
+    contenedorRespuesta.classList.remove('oculto');
+    for(let i = 0; i < 20; i++) {
+        setTimeout(crearCorazon, i * 80);
     }
 }
 
