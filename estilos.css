@@ -17,7 +17,7 @@ body {
 }
 
 .tarjeta-principal {
-    background: rgba(22, 6, 14, 0.94);
+    background: rgba(22, 6, 14, 0.95);
     backdrop-filter: blur(20px);
     border-radius: 28px;
     padding: 22px 14px;
@@ -28,6 +28,7 @@ body {
     position: relative;
     z-index: 10;
     border: 2px solid rgba(255, 105, 180, 0.35);
+    overflow: hidden; /* Mantiene la lluvia de brillos atrapada dentro de la tarjeta */
 }
 
 /* HEADER */
@@ -157,7 +158,7 @@ h1 {
     line-height: 1.2;
 }
 
-/* SECCIÓN PREGUNTA FINAL (EFECTO BOFF) */
+/* SECCIÓN PREGUNTA FINAL */
 .seccion-pregunta {
     background: rgba(255, 20, 147, 0.1);
     padding: 14px 10px;
@@ -185,8 +186,8 @@ h1 {
     background: linear-gradient(45deg, #ff0055, #ff477e);
     color: white;
     border: none;
-    padding: 8px 16px;
-    font-size: 0.78rem;
+    padding: 8px 14px;
+    font-size: 0.74rem;
     font-weight: 700;
     border-radius: 50px;
     box-shadow: 0 0 20px rgba(255, 0, 85, 0.9);
@@ -284,24 +285,25 @@ h1 {
     display: none;
 }
 
-/* EFECTO BOFF: CORAZONES EXPLOSIVOS GIGANTES */
-.contenedor-corazones {
-    position: fixed;
+/* LLUVIA DE BRILLOS INTERNA (DE ARRIBA HACIA ABAJO) */
+.contenedor-brillos {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
     z-index: 1;
+    overflow: hidden;
 }
 
-.corazon-flotante {
+.brillo-particula {
     position: absolute;
-    bottom: -30px;
-    color: #ff477e;
-    opacity: 0.9;
-    animation: subirBoing 5s linear infinite;
-    text-shadow: 0 0 15px #ff0055, 0 0 25px #ff477e;
+    top: -20px;
+    color: #ffdf00; /* Tono dorado/brillante romántico */
+    opacity: 0.8;
+    animation: caerBrillo linear infinite;
+    text-shadow: 0 0 8px #ff477e, 0 0 15px #ffff00;
 }
 
 @keyframes flotar {
@@ -319,8 +321,8 @@ h1 {
     50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(255, 0, 85, 1); }
 }
 
-@keyframes subirBoing {
-    0% { transform: translateY(0) scale(0.6) rotate(0deg); opacity: 1; }
-    50% { transform: translateY(-50vh) scale(1.3) rotate(180deg); opacity: 0.9; }
-    100% { transform: translateY(-105vh) scale(1) rotate(360deg); opacity: 0; }
+@keyframes caerBrillo {
+    0% { transform: translateY(0) rotate(0deg) scale(0.8); opacity: 1; }
+    50% { opacity: 0.9; }
+    100% { transform: translateY(105vh) rotate(360deg) scale(1.2); opacity: 0; }
 }
