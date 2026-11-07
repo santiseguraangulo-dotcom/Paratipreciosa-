@@ -50,14 +50,14 @@
                 <span class="sub-bento">Toca para abrir</span>
             </div>
 
-            <!-- TARJETA RAZONES (SIN REPETIR Y TERMINA EN TU FRASE) -->
-            <div class="tarjeta-bento razon-bento" onclick="mostrarRazon()">
+            <!-- TARJETA RAZONES (EN ORDEN ESTRICTO DEL 1 AL 7) -->
+            <div class="tarjeta-bento razon-bento" onclick="mostrarRazonOrden()">
                 <div class="icono-bento">✨</div>
                 <p class="titulo-bento">¿Por qué te amo?</p>
                 <span class="sub-bento" id="texto-razon">Toca para descubrir</span>
             </div>
 
-            <!-- PREGUNTA 1: ¿ME AMAS? -->
+            <!-- PREGUNTA FINAL: ¿ME AMAS? CON WHATSAPP -->
             <div class="tarjeta-bento col-2 seccion-pregunta">
                 <p class="pregunta-amor">¿Me amas con la misma locura con la que yo te amo a ti?</p>
                 <div class="botones-amor">
@@ -67,20 +67,6 @@
                 <div id="respuesta-amor-container" class="oculto">
                     <p class="mensaje-chido">¡Sabía que mi reina me ama con la misma intensidad! Eres mi todo ❤️🔥👑</p>
                     <a id="linkWpAmor" href="#" target="_blank" class="btn-whatsapp">💬 Enviar respuesta por WhatsApp</a>
-                </div>
-            </div>
-
-            <!-- PREGUNTA 2: ¿QUIERES SER MI NOVIA? -->
-            <div class="tarjeta-bento col-2 seccion-pregunta">
-                <p class="pregunta-amor">¿Quieres ser mi novia?</p>
-                <p class="sub-pregunta" style="font-size: 0.7rem; color: #ffb3c6; margin-bottom: 8px;">Igualmente te lo voy a decir en la cara, mi vida 🌹</p>
-                <div class="botones-amor">
-                    <button class="btn-si" onclick="dijoSiNovia()">¡Sí, quiero ser tu novia! 💍</button>
-                    <button class="btn-no" id="btnNo2" onmouseover="moverNo('btnNo2')" ontouchstart="moverNo('btnNo2')">No 🙈</button>
-                </div>
-                <div id="respuesta-novia-container" class="oculto">
-                    <p class="mensaje-chido">¡El "Sí" más hermoso del mundo! Oficialmente mi prometida / novia hermosa ❤️👑</p>
-                    <a id="linkWpNovia" href="#" target="_blank" class="btn-whatsapp">💬 Decirle que ¡SÍ! en WhatsApp</a>
                 </div>
             </div>
 
