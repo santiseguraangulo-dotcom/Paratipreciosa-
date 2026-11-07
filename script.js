@@ -63,29 +63,28 @@ function cerrarFotoGrande() {
     document.getElementById('modalFoto').classList.add('oculto');
 }
 
-// --- CAJITA DE RAZONES (TERMINA EN "AMO TODO DE TI, MI REINA" Y SIN REPETIR SEGUIDAS) ---
-const razones = [
-    "Amo tu hermosa sonrisa que alegra mis días 😍",
-    "Eres la mujer más increíble de este mundo 👑",
-    "Tu forma de ser me vuelve loco de amor 💕",
-    "Cada segundo a tu lado es un regalo del cielo ✨",
-    "Tus abrazos son mi lugar favorito en el universo 🫂",
-    "Amo todo de ti, mi reina ❤️"
+// --- CAJITA DE RAZONES EN ORDEN EXACTO (DEL 1 AL 7) ---
+const razonesEnOrden = [
+    "1. Amo tu hermosa sonrisa que alegra mis días 😍",
+    "2. Eres la mujer más increíble de este mundo 👑",
+    "3. Tu forma de ser me vuelve loco de amor 💕",
+    "4. Cada segundo a tu lado es un regalo del cielo ✨",
+    "5. Tus abrazos son mi lugar favorito en el universo 🫂",
+    "6. Me encantas completita, tal como eres ❤️",
+    "7. Amo todo de ti, mi reina ❤️"
 ];
 
-let ultimaRazonIndex = -1;
+let indiceRazonActual = 0;
 
-function mostrarRazon() {
+function mostrarRazonOrden() {
     const textoRazon = document.getElementById('texto-razon');
-    let indiceAleatorio;
     
-    do {
-        indiceAleatorio = Math.floor(Math.random() * razones.length);
-    } while (indiceAleatorio === ultimaRazonIndex);
-
-    ultimaRazonIndex = indiceAleatorio;
-    textoRazon.textContent = razones[indiceAleatorio];
+    // Muestra la frase actual en orden
+    textoRazon.textContent = razonesEnOrden[indiceRazonActual];
     crearCorazon();
+    
+    // Avanza al siguiente toque. Si llega al final, se queda en la última o vuelve a empezar (aquí se queda o repite cíclico)
+    indiceRazonActual = (indiceRazonActual + 1) % razonesEnOrden.length;
 }
 
 // --- BOTÓN TRAVIESO "NO" ---
@@ -96,29 +95,15 @@ function moverNo(idBtn) {
     btnNo.style.transform = `translate(${x}px, ${y}px)`;
 }
 
-// --- RESPUESTA PREGUNTA 1 (¿ME AMAS?) + WHATSAPP ---
+// --- RESPUESTA PREGUNTA AMOR + WHATSAPP ---
 function dijoSiAmor() {
     const contenedor = document.getElementById('respuesta-amor-container');
     contenedor.classList.remove('oculto');
     
-    // Enlace de WhatsApp (reemplaza tu número si deseas, formato internacional sin el + ej: 573001234567)
     const textoWp = encodeURIComponent("¡Amor, vi tu página web y te amo con la misma locura y el alma entera! ❤️🔥👑");
     document.getElementById('linkWpAmor').href = `https://wa.me/?text=${textoWp}`;
 
     for(let i = 0; i < 15; i++) {
-        setTimeout(crearCorazon, i * 80);
-    }
-}
-
-// --- RESPUESTA PREGUNTA 2 (¿QUIERES SER MI NOVIA?) + WHATSAPP ---
-function dijoSiNovia() {
-    const contenedor = document.getElementById('respuesta-novia-container');
-    contenedor.classList.remove('oculto');
-    
-    const textoWp = encodeURIComponent("¡Mi amor, sí quiero ser tu novia para toda la vida! 💍❤️ Te amo muchísimo.");
-    document.getElementById('linkWpNovia').href = `https://wa.me/?text=${textoWp}`;
-
-    for(let i = 0; i < 20; i++) {
         setTimeout(crearCorazon, i * 80);
     }
 }
