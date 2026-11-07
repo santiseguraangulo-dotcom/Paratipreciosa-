@@ -46,17 +46,17 @@ function toggleMusica() {
 // --- CARTA POPUP (MODAL) ---
 function abrirCarta() {
     document.getElementById('modalCarta').classList.remove('oculto');
-    lanzarExplosionCorazones();
+    lanzarLluviaBrillos();
 }
 
 function cerrarCarta() {
-    document.getElementById('modalCarta').classList.add('oculto');
+    document.getElementById('modalCarta'].classList.add('oculto');
 }
 
 // --- FOTO INTERACTIVA GRANDE ---
 function abrirFotoGrande() {
     document.getElementById('modalFoto').classList.remove('oculto');
-    lanzarExplosionCorazones();
+    lanzarLluviaBrillos();
 }
 
 function cerrarFotoGrande() {
@@ -79,7 +79,7 @@ let indiceRazonActual = 0;
 function mostrarRazonOrden() {
     const textoRazon = document.getElementById('texto-razon');
     textoRazon.textContent = razonesEnOrden[indiceRazonActual];
-    crearCorazon();
+    crearBrillo();
     indiceRazonActual = (indiceRazonActual + 1) % razonesEnOrden.length;
 }
 
@@ -91,38 +91,41 @@ function moverNo(idBtn) {
     btnNo.style.transform = `translate(${x}px, ${y}px)`;
 }
 
-// --- ACCIÓN BOTÓN SÍ MEDIANOCHE (EFECTO BOFF + MENSAJE LIMPIO) ---
-function dijoSiMedianoche() {
+// --- ACCIÓN BOTÓN FINAL ---
+function mostrarMensajeFinal() {
     const contenedor = document.getElementById('respuesta-amor-container');
     contenedor.classList.remove('oculto');
-    lanzarExplosionCorazones();
+    lanzarLluviaBrillos();
 }
 
-// --- CREAR CORAZONES INDIVIDUALES ---
-function crearCorazon() {
-    const contenedor = document.getElementById('corazones');
-    const corazon = document.createElement('div');
-    corazon.classList.add('corazon-flotante');
+// --- CREAR PARTÍCULAS DE BRILLO (DE ARRIBA HACIA ABAJO DENTRO DE LA TARJETA) ---
+function crearBrillo() {
+    const contenedor = document.getElementById('brillos');
+    if (!contenedor) return;
     
-    const iconos = ['❤️', '💖', '🔥', '👑', '✨', '🌹', '💋', '💥', '🎂'];
-    corazon.textContent = iconos[Math.floor(Math.random() * iconos.length)];
+    const brillo = document.createElement('div');
+    brillo.classList.add('brillo-particula');
     
-    corazon.style.left = Math.random() * 100 + 'vw';
-    corazon.style.fontSize = (Math.random() * 24 + 16) + 'px';
-    corazon.style.animationDuration = (Math.random() * 2 + 3) + 's';
+    const iconosBrillo = ['✨', '⭐', '💫', '💖', '🌟', '💎'];
+    brillo.textContent = iconosBrillo[Math.floor(Math.random() * iconosBrillo.length)];
     
-    contenedor.appendChild(corazon);
+    brillo.style.left = Math.random() * 100 + '%';
+    brillo.style.fontSize = (Math.random() * 14 + 10) + 'px';
+    brillo.style.animationDuration = (Math.random() * 2 + 2.5) + 's';
+    
+    contenedor.appendChild(brillo);
 
     setTimeout(() => {
-        corazon.remove();
-    }, 5000);
+        brillo.remove();
+    }, 4500);
 }
 
-// --- EXPLOSIÓN MÁS POTENTE (EFECTO BOFF) ---
-function lanzarExplosionCorazones() {
-    for(let i = 0; i < 30; i++) {
-        setTimeout(crearCorazon, i * 50);
+// --- LANZAR LLUVIA INTENSA DE BRILLOS ---
+function lanzarLluviaBrillos() {
+    for(let i = 0; i < 20; i++) {
+        setTimeout(crearBrillo, i * 80);
     }
 }
 
-setInterval(crearCorazon, 600);
+// Generar brillos sutiles continuamente dentro de la tarjeta
+setInterval(crearBrillo, 500);
