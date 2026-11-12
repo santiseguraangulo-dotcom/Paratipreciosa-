@@ -65,13 +65,13 @@ function cerrarFotoGrande() {
 
 // --- CAJITA DE RAZONES EN ORDEN EXACTO (DEL 1 AL 7) ---
 const razonesEnOrden = [
-    "1. Amo tu hermosa sonrisa que alegra mis días 😍",
-    "2. Eres la mujer más increíble de este mundo 👑",
-    "3. Tu forma de ser me vuelve loco de amor 💕",
-    "4. Cada segundo a tu lado es un regalo del cielo ✨",
-    "5. Tus abrazos son mi lugar favorito en el universo 🫂",
-    "6. Me encantas completita, tal como eres ❤️",
-    "7. Amo todo de ti, mi reina ❤️"
+    "1. Tus ojos ✨",
+    "2. Tus labios 💋",
+    "3. Tu sonrisa 💫",
+    "4. Tu forma de ser 🤍",
+    "5. Lo bien que la pasamos juntos 🌙",
+    "6. el detalle que me diste 🔥",
+    "7. Me encanta todo de ti, mi reina 😘🫶 "
 ];
 
 let indiceRazonActual = 0;
