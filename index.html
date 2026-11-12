@@ -43,31 +43,11 @@
                 <div id="reloj" class="reloj">Calculando latidos...</div>
             </div>
 
-            <!-- TARJETA MENSAJE ESPECIAL -->
-            <div class="tarjeta-bento sobre-bento" onclick="abrirCarta()">
+            <!-- TARJETA MENSAJE ESPECIAL (OCUPA TODO EL ANCHO AL QUITAR LA OTRA) -->
+            <div class="tarjeta-bento col-2 sobre-bento" onclick="abrirCarta()">
                 <div class="icono-bento">💌</div>
                 <p class="titulo-bento">Un Mensajito</p>
                 <span class="sub-bento">Toca para leer</span>
-            </div>
-
-            <!-- TARJETA RAZONES (MANTENIDA TAL CUAL) -->
-            <div class="tarjeta-bento razon-bento" onclick="mostrarRazonOrden()">
-                <div class="icono-bento">✨</div>
-                <p class="titulo-bento">¿Por qué te amo?</p>
-                <span class="sub-bento" id="texto-razon">Toca para descubrir</span>
-            </div>
-
-            <!-- ÚLTIMA SECCIÓN -->
-            <div class="tarjeta-bento col-2 seccion-pregunta">
-                <p class="pregunta-amor">¿Me amas con la misma locura con la que yo te amo a ti?</p>
-                <div class="botones-amor">
-                    <button class="btn-si" onclick="mostrarMensajeFinal()">💖 Toca aquí, mi reina hermosa ✨</button>
-                    <button class="btn-no" id="btnNo1" onmouseover="moverNo('btnNo1')" ontouchstart="moverNo('btnNo1')">No 🙈</button>
-                </div>
-                
-                <div id="respuesta-amor-container" class="oculto">
-                    <p class="mensaje-chido">¡Feliz cumpleaños, mi vida! 🎂👑 Guarda tu respuesta, tus besos y tus abrazos para dármelos en persona cuando nos veamos... ❤️🔥</p>
-                </div>
             </div>
 
         </div>
