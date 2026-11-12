@@ -50,17 +50,23 @@
                 <span class="sub-bento">Toca para leer</span>
             </div>
 
-            <!-- TARJETA CON TU TÍTULO -->
+            <!-- TARJETA CON TU TÍTULO EXACTO -->
             <div class="tarjeta-bento razon-bento" onclick="mostrarRazonOrden()">
                 <div class="icono-bento">✨</div>
                 <p class="titulo-bento" style="font-size: 0.8rem;">Unas palabras o frases para ti, mi reina</p>
                 <span class="sub-bento" id="texto-razon">Toca para descubrir</span>
             </div>
 
-            <!-- ÚLTIMA SECCIÓN (SOLO EL MENSAJE DE CUMPLEAÑOS LIMPIO) -->
+            <!-- ÚLTIMA SECCIÓN CON PREGUNTA Y MENSAJE ACTUALIZADO -->
             <div class="tarjeta-bento col-2 seccion-pregunta">
-                <div id="respuesta-amor-container">
-                    <p class="mensaje-chido" style="margin: 0;">¡Feliz cumpleaños, mi vida! 🎂👑 Guarda tu respuesta, tus besos y tus abrazos para dármelos en persona cuando nos veamos... ❤️🔥</p>
+                <p class="pregunta-amor">¿Adivina quién se gana el mejor abrazo y un montón de besos en persona hoy? 😏❤️</p>
+                <div class="botones-amor">
+                    <button class="btn-si" onclick="mostrarMensajeFinal()">💖 Toca aquí, mi reina hermosa ✨</button>
+                    <button class="btn-no" id="btnNo1" onmouseover="moverNo('btnNo1')" ontouchstart="moverNo('btnNo1')">No 🙈</button>
+                </div>
+                
+                <div id="respuesta-amor-container" class="oculto">
+                    <p class="mensaje-chido">¡Feliz cumpleaños, mi reina! 🎂👑 Guarda tu respuesta, tus besos y tus abrazos para dármelos en persona cuando nos veamos... ❤️🔥</p>
                 </div>
             </div>
 
