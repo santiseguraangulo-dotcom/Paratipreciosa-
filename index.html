@@ -43,24 +43,37 @@
                 <div id="reloj" class="reloj">Calculando latidos...</div>
             </div>
 
-            <!-- TARJETA MENSAJE ESPECIAL (OCUPA TODO EL ANCHO AL QUITAR LA OTRA DE ARRIBA) -->
-            <div class="tarjeta-bento col-2 sobre-bento" onclick="abrirCarta()">
+            <!-- TARJETA MENSAJE ESPECIAL -->
+            <div class="tarjeta-bento sobre-bento" onclick="abrirCarta()">
                 <div class="icono-bento">💌</div>
                 <p class="titulo-bento">Un Mensajito</p>
                 <span class="sub-bento">Toca para leer</span>
             </div>
 
-            <!-- ÚLTIMA SECCIÓN (SOLO EL MENSAJE FINAL DE CUMPLEAÑOS QUE QUERÍAS CONSERVAR, SIN LA PREGUNTA DRAMÁTICA) -->
+            <!-- TARJETA DE RAZONES CON TÍTULO CORTO Y LIMPIO -->
+            <div class="tarjeta-bento razon-bento" onclick="mostrarRazonOrden()">
+                <div class="icono-bento">✨</div>
+                <p class="titulo-bento">Lo que amo de ti 💖</p>
+                <span class="sub-bento" id="texto-razon">Toca para descubrir</span>
+            </div>
+
+            <!-- ÚLTIMA SECCIÓN (CON PREGUNTA MÁS NATURAL) -->
             <div class="tarjeta-bento col-2 seccion-pregunta">
-                <div id="respuesta-amor-container">
-                    <p class="mensaje-chido" style="margin: 0;">¡Feliz cumpleaños, mi vida! 🎂👑 Guarda tu respuesta, tus besos y tus abrazos para dármelos en persona cuando nos veamos... ❤️🔥</p>
+                <p class="pregunta-amor">¿Listo para el abrazo y el plan de hoy en persona? 🎁</p>
+                <div class="botones-amor">
+                    <button class="btn-si" onclick="mostrarMensajeFinal()">💖 Toca aquí, mi reina hermosa ✨</button>
+                    <button class="btn-no" id="btnNo1" onmouseover="moverNo('btnNo1')" ontouchstart="moverNo('btnNo1')">No 🙈</button>
+                </div>
+                
+                <div id="respuesta-amor-container" class="oculto">
+                    <p class="mensaje-chido">¡Feliz cumpleaños, mi vida! 🎂👑 Guarda tu respuesta, tus besos y tus abrazos para dármelos en persona cuando nos veamos... ❤️🔥</p>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <!-- MODAL MENSAJE (CON TU TEXTO LIMPIO Y TU FIRMA CLÁSICA) -->
+    <!-- MODAL MENSAJE (CARTA) -->
     <div class="modal-overlay oculto" id="modalCarta">
         <div class="modal-contenido">
             <span class="cerrar-modal" onclick="cerrarCarta()">&times;</span>
