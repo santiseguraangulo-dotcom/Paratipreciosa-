@@ -63,17 +63,7 @@ function cerrarFotoGrande() {
     document.getElementById('modalFoto').classList.add('oculto');
 }
 
-// --- MODAL: PALABRAS / FRASES (NUEVO) ---
-function abrirRazon() {
-    document.getElementById('modalRazon').classList.remove('oculto');
-    lanzarLluviaBrillos();
-}
-
-function cerrarRazon() {
-    document.getElementById('modalRazon').classList.add('oculto');
-}
-
-// --- MODAL: CUMPLEAÑERA (NUEVO) ---
+// --- MODAL: CUMPLEAÑERA ---
 function abrirCumple() {
     document.getElementById('modalCumple').classList.remove('oculto');
     lanzarLluviaBrillos();
@@ -90,17 +80,27 @@ const razonesEnOrden = [
     "3. Tu sonrisa 💫",
     "4. Tu forma de ser 🤍",
     "5. Lo bien que la pasamos juntos 🌙",
-    "6. el detalle que me diste 🔥",
-    "7. Me encanta todo de ti, mi reina 😘🫶 "
+    "6. El detalle que me diste 🔥",
+    "7. Me encanta todo de ti, mi reina 😘🫶"
 ];
 
 let indiceRazonActual = 0;
 
 function mostrarRazonOrden() {
     const textoRazon = document.getElementById('texto-razon');
+    
+    // Si ya mostró la última, reiniciamos el texto original de la tarjeta
+    if (indiceRazonActual >= razonesEnOrden.length) {
+        textoRazon.textContent = "Toca para descubrir";
+        indiceRazonActual = 0; // Reinicia el ciclo
+        return;
+    }
+
+    // Muestra la frase actual
     textoRazon.textContent = razonesEnOrden[indiceRazonActual];
     crearBrillo();
-    indiceRazonActual = (indiceRazonActual + 1) % razonesEnOrden.length;
+    
+    indiceRazonActual++;
 }
 
 // --- BOTÓN TRAVIESO "NO" ---
@@ -109,15 +109,6 @@ function moverNo(idBtn) {
     const x = Math.random() * 100 - 50;
     const y = Math.random() * 50 - 25;
     btnNo.style.transform = `translate(${x}px, ${y}px)`;
-}
-
-// --- ACCIÓN BOTÓN FINAL ---
-function mostrarMensajeFinal() {
-    const contenedor = document.getElementById('respuesta-amor-container');
-    if (contenedor) {
-        contenedor.classList.remove('oculto');
-    }
-    lanzarLluviaBrillos();
 }
 
 // --- CREAR PARTÍCULAS DE BRILLO ---
