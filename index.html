@@ -42,7 +42,7 @@
                 <div id="reloj" class="reloj">Calculando latidos...</div>
             </div>
 
-            <!-- TARJETA MENSAJE ESPECIAL -->
+            <!-- TARJETA MENSAJE ESPECIAL (CARTA) -->
             <div class="tarjeta-bento sobre-bento" onclick="abrirCarta()">
                 <div class="icono-bento">💌</div>
                 <p class="titulo-bento">Un Mensajito</p>
@@ -50,21 +50,17 @@
             </div>
 
             <!-- TARJETA CON TUS FRASES -->
-            <div class="tarjeta-bento razon-bento" onclick="mostrarRazonOrden()">
+            <div class="tarjeta-bento razon-bento" onclick="abrirRazon()">
                 <div class="icono-bento">✨</div>
                 <p class="titulo-bento" style="font-size: 0.8rem;">Unas palabras o frases para ti, mi reina</p>
-                <span class="sub-bento" id="texto-razon">Toca para descubrir</span>
+                <span class="sub-bento">Toca para descubrir</span>
             </div>
 
             <!-- ÚLTIMA SECCIÓN -->
-            <div class="tarjeta-bento col-2 seccion-pregunta" onclick="mostrarMensajeFinal()" style="cursor: pointer;">
+            <div class="tarjeta-bento col-2 seccion-pregunta" onclick="abrirCumple()" style="cursor: pointer;">
                 <div class="icono-bento">🎂</div>
                 <p class="titulo-bento">Para Mi Cumpleañera</p>
                 <span class="sub-bento">Toca para abrir</span>
-                
-                <div id="respuesta-amor-container" class="oculto" style="margin-top: 15px; border-top: 1px solid rgba(255, 71, 126, 0.3); padding-top: 12px;">
-                    <p class="mensaje-chido" style="font-size: 0.9rem; line-height: 1.5; color: #ffb3c6;">¡Feliz cumpleaños, mi reina! 🎂👑 Tus besos y tus abrazos quedan guardados para dármelos en persona cuando nos veamos... ❤️🔥</p>
-                </div>
             </div>
 
         </div>
@@ -84,6 +80,26 @@
             </div>
 
             <p class="firma" style="margin-top: 15px;">Tuyo por siempre y para siempre ❤️</p>
+        </div>
+    </div>
+
+    <!-- MODAL: PALABRAS / FRASES -->
+    <div class="modal-overlay oculto" id="modalRazon">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" onclick="cerrarRazon()">&times;</span>
+            <p class="titulo-modal">Palabras para ti ✨</p>
+            <p>Aquí puedes poner las frases o dedicatorias adicionales que quieras que ella lea en grande cuando toque esta tarjeta.</p>
+            <p class="firma" style="margin-top: 15px;">Con todo mi amor ❤️</p>
+        </div>
+    </div>
+
+    <!-- MODAL: CUMPLEAÑERA -->
+    <div class="modal-overlay oculto" id="modalCumple">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" onclick="cerrarCumple()">&times;</span>
+            <p class="titulo-modal">Para Mi Cumpleañera 🎂👑</p>
+            <p>¡Feliz cumpleaños, mi reina! Tus besos y tus abrazos quedan guardados para dármelos en persona cuando nos veamos... ❤️🔥</p>
+            <p class="firma" style="margin-top: 15px;">Te amo muchísimo 🔥👑</p>
         </div>
     </div>
 
