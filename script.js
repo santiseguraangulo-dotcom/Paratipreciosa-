@@ -63,6 +63,26 @@ function cerrarFotoGrande() {
     document.getElementById('modalFoto').classList.add('oculto');
 }
 
+// --- MODAL: PALABRAS / FRASES (NUEVO) ---
+function abrirRazon() {
+    document.getElementById('modalRazon').classList.remove('oculto');
+    lanzarLluviaBrillos();
+}
+
+function cerrarRazon() {
+    document.getElementById('modalRazon').classList.add('oculto');
+}
+
+// --- MODAL: CUMPLEAÑERA (NUEVO) ---
+function abrirCumple() {
+    document.getElementById('modalCumple').classList.remove('oculto');
+    lanzarLluviaBrillos();
+}
+
+function cerrarCumple() {
+    document.getElementById('modalCumple').classList.add('oculto');
+}
+
 // --- CAJITA DE RAZONES EN ORDEN EXACTO (DEL 1 AL 7) ---
 const razonesEnOrden = [
     "1. Tus ojos ✨",
@@ -94,7 +114,9 @@ function moverNo(idBtn) {
 // --- ACCIÓN BOTÓN FINAL ---
 function mostrarMensajeFinal() {
     const contenedor = document.getElementById('respuesta-amor-container');
-    contenedor.classList.remove('oculto');
+    if (contenedor) {
+        contenedor.classList.remove('oculto');
+    }
     lanzarLluviaBrillos();
 }
 
